@@ -38,9 +38,8 @@ def signupView(request):
             user=authenticate(request,username=user_name,password=password)
             if user is not None:
                 login(request,user)
-                return render(request,'index.html',{'user_created':success_msg})
-            else:
-                return render(request,'index.html',{'user_created':success_msg})
-                
+            return render(request,'index.html',{'user_created':success_msg})
+        else:
+            return render(request,'signup.html',{'form':form,'error_message':'User Not created'})
     form=UserCreationForm()
-    return render(request,'signup.html',{'form':form,'error_message':'User Not created'})
+    return render(request,'signup.html',{'form':form})
