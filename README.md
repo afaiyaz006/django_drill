@@ -36,4 +36,4 @@ Finally to start the project
 python django_practice/manage.py runserver
 ```
 
-This will start a webserver on 127.0.0.1:8000.
+This will start a webserver on 127.0.0.1:8000. So navigate to http://127.0.0.1:8000
