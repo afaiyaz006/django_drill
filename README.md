@@ -1,6 +1,6 @@
 # django_drill
 A repository I have created to practice and learn about python django.
-# To Testrun the project
+# To test run the project
 First of all clone the whole project
 ```bash
 git clone https://github.com/afaiyaz006/django_drill
