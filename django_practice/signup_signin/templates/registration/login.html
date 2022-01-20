@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+{% block content %}
+<br>
+<form method="post" action="{% url 'after_login' %}">
+    {% csrf_token %}
+    <label>User Name</label><br>
+    {{form.username}}
+    <br>
+    <label> Enter password</label><br>
+    {{form.password}}
+    <br>
+    <button type="submit" >Login</button>
+    <br>
+    <p style="color:red">{{error}}</p>
+    
+</form>
+
+{% endblock %}

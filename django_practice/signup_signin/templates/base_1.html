@@ -1,0 +1,41 @@
+<head>
+    <title>
+        Basic WebPage
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+</head>
+
+<main>
+    <header>
+        {% url 'index' as the_index %}
+        {% url 'login' as login_page %}
+        {% url 'signup' as signup_page %}
+        
+        <h1>Basic WebPage</h1>
+        <nav>
+            <a href="{{the_index}}">Home</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'make_logout' %}">Logout</a>
+            {% else %}
+                <a href="{{signup_page}}">Signup</a>
+                <a href="{{login_page}}">Login</a>
+            {% endif %}
+        </nav>
+    </header>
+    <body>
+        <p style="color: green;">
+            {{user_created}}
+        
+        </p>
+        {% if user.is_authenticated %}
+          Hi {{user.username}},
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+    </body>
+</main>
+<footer>
+    <p>Doyal Inc.</p>
+</footer>

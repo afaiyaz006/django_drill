@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+{% for data in datas %}
+<div class="card border-primary mb-3" style="max-width: 20rem;">
+    <div class="card-header">{{data.id}}</div>
+    <div class="card-body">
+        <h4 class="card-title">{{data.fullname}}</h4>
+        <p class="card-text">
+            Email: {{data.email}}<br>
+            Phone Number: {{data.phone_number}}<br>
+            Gender: {{data.gender}}<br>
+        </p>
+    </div>
+</div>
+<br>
+{% endfor %}
+{% endblock %}

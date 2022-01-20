@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<!---form-->
+<div class="row" style="float: none; margin: 0 auto;">
+    <div class="col-lg-6">
+        <div class="bs-component" >
+            <div class="card border-primary mb-3" style="max-width: 100rem;">
+                <div class="card-header">Simple Form</div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <fieldset>
+                            <legend>Fill Up the form</legend>
+                            <div class="form-group">
+                                <label class="col-form-label mt-4" for="inputDefault">First Name</label>
+                                <!--input type="text" class="form-control" placeholder="first_name" id="fname"-->
+                                {{form.firstname}}
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label mt-4" for="inputDefault">Last Name</label>
+                                <!--input type="text" class="form-control" placeholder="last_name" id="lname"-->
+                                {{form.lastname}}
+                            </div>
+                            <div class="form-group">
+                                <label for="select_gender" class="form-label mt-4">Gender</label>
+                                {{form.gender}}
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
+                                <!--input type="email" class="form-control" id="ipemail"
+                                    aria-describedby="emailHelp" placeholder="Enter email"-->
+                                {{form.email_adress}}
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with
+                                    anyone
+                                    else.hehehe</small>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label mt-4" for="inputDefault">Phone Number</label>
+                                <!--input type="text" class="form-control" placeholder="phone number" id="pnumber"-->
+                                {{form.phone_number}}
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

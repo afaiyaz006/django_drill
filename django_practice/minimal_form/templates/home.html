@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div style="margin: auto 46%;">
+
+
+    <div class="d-grid gap-2">
+        <a href="{% url 'view_form' %}" style="color: aliceblue;">
+            <button class="btn btn-lg btn-primary" type="button">
+                View Form
+            </button>
+        </a>
+        </button>
+        <a href="{% url 'display_data' %}" style="color: aliceblue;">
+            <button class="btn btn-lg btn-primary" type="button">
+                View Datas
+            </button>
+        </a>
+    </div>
+
+
+</div>
+
+
+{% endblock %}
